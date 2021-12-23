@@ -1,4 +1,3 @@
-//Halim Bayka, 2100005202
 //https://github.com/Patrickek
 #include <stdio.h>
 #include <stdlib.h>
