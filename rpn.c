@@ -58,22 +58,26 @@ int main()
             case NUMBER:
                 push(strtod(input, NULL));//Convert string to float with strtod and push it to stack.
                 break;
-            case '+':
+            case '+': // In case of an operator pop items from stack do the math and then push them to stack.
                 push(pop() + pop());
                 break;
             case '*':
-                push(pop() * pop());
+                push(pop() * pop());// Same with the above one.
                 break;
             case '-':
                 op2 = pop();
-                push(pop() - op2);
+                push(pop() - op2);// Same with the above one.
                 break;
             case '/':
                 op2 = pop();
-                if (op2 == 0.0)
+                if (op2 == 0.0)// If input second operand is 0 then give error.
+                {
                     printf("Divide by zero.\n");
-                else
+                    exit(1);
+                } else
+                {
                     push(pop() / op2);
+                }
                 break;
             case '=':
                 printf("Result: %.1f\n", push(pop()));
